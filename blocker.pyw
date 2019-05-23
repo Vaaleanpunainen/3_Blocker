@@ -7,7 +7,7 @@ websites_list = ["www.facebook.com", "facebook.com"]
 
 while True:
     if (dt(dt.now().year, dt.now().month, dt.now().day, 10)) < dt.now() < (dt(dt.now().year, dt.now().month, dt.now().day, 15)):
-        print("Working hours...")
+
         with open(hosts_path, "r+") as file:
             content = file.read()
             for ws in websites_list:
@@ -23,5 +23,5 @@ while True:
                 if not any(ws in line for ws in websites_list):
                     file.write(line)
             file.truncate()
-        print("Free time...")
+
     time.sleep(5)
